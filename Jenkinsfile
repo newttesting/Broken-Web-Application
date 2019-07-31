@@ -22,10 +22,12 @@ pipeline {
             }
         }*/
 					
-            stage('Build') {
+            stage('SonarQube') {
             steps {
                 echo "*****Build*****"
-                sh "mvn clean install" 
+                sh "mvn clean install -DskipTests=false"
+				sh "mvn org.owasp:dependency-check-maven:check"
+                sh "mvn test verify surefire-report:report-only sonar:sonar -Dsonar.host.url=http://192.168.2.78:9000 -Dsonar.login=5516211574596dc9fa09edd2d41cc4fb001aab70 -Dsonar.password="
             }
          
 		   post {
