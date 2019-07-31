@@ -636,3 +636,5 @@ We saw earlier that in that case if somebody is able to capture network traffic 
   ![INFO_3](screenshots/A6/INFO_3.png)
   
   You can verify that both are working by navigating to "http://localhost:8080" & "https://localhost:8443" via your browser.
+
+####
